@@ -10,9 +10,9 @@
     cursor: pointer;
 }
 
-.widget-progressbar .widget-progressbar-negative {
+.widget-progressbar-negative {
     float: right;
-    display: block
+    display: block;
 }
 
 .widget-progressbar-alert.widget-progressbar-text-contrast .progress-bar {

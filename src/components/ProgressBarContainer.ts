@@ -38,7 +38,7 @@ export default class ProgressBarContainer extends Component<ProgressBarContainer
         this.state = defaultState;
         this.subscriptionHandles = [];
         this.handleClick = this.handleClick.bind(this);
-        this.subscriptionCallback = (mxObject) => () => this.setState(this.updateValues(mxObject));
+        this.subscriptionCallback = mxObject => () => this.setState(this.updateValues(mxObject));
     }
 
     render() {
@@ -63,7 +63,7 @@ export default class ProgressBarContainer extends Component<ProgressBarContainer
     }
 
     componentWillUnmount() {
-        this.subscriptionHandles.forEach((handle) => window.mx.data.unsubscribe(handle));
+        this.subscriptionHandles.forEach(handle => window.mx.data.unsubscribe(handle));
     }
 
     private validateProps(): string {
@@ -98,7 +98,7 @@ export default class ProgressBarContainer extends Component<ProgressBarContainer
     }
 
     private resetSubscription(mxObject: mendix.lib.MxObject) {
-        this.subscriptionHandles.forEach((handle) => window.mx.data.unsubscribe(handle));
+        this.subscriptionHandles.forEach(handle => window.mx.data.unsubscribe(handle));
         this.subscriptionHandles = [];
 
         if (mxObject) {
@@ -110,7 +110,7 @@ export default class ProgressBarContainer extends Component<ProgressBarContainer
                 this.props.progressAttribute,
                 this.props.maximumValueAttribute,
                 this.props.bootstrapStyleAttribute
-            ].forEach((attr) => {
+            ].forEach(attr => {
                 this.subscriptionHandles.push(window.mx.data.subscribe({
                     attr,
                     callback: this.subscriptionCallback(mxObject),
@@ -126,18 +126,18 @@ export default class ProgressBarContainer extends Component<ProgressBarContainer
         if (mxObject && onClickOption === "callMicroflow" && onClickMicroflow && mxObject.getGuid()) {
             window.mx.ui.action(onClickMicroflow, {
                 context: new window.mendix.lib.MxContext(),
-                error: (error) =>
+                error: error =>
                     window.mx.ui.error(`Error while executing microflow ${onClickMicroflow}: ${error.message}`),
                 params: {
                     applyto: "selection",
-                    guids: [ mxObject.getGuid() ]
+                    guids: [mxObject.getGuid()]
                 }
             });
         } else if (mxObject && onClickOption === "showPage" && onClickPage && mxObject.getGuid()) {
             const context = new window.mendix.lib.MxContext();
             context.setContext(mxObject.getEntity(), mxObject.getGuid());
             window.mx.ui.openForm(onClickPage, {
-                error: (error) =>
+                error: error =>
                     window.mx.ui.error(`Error while opening page ${onClickPage}: ${error.message}`),
                 context
             });

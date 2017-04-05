@@ -61,7 +61,7 @@ class ProgressBar extends Component<ProgressBarProps, { alertMessage?: string }>
         );
     }
 
-    private progressValue(progress: number | null, maximumValue = 100) {
+    private progressValue(progress: number | null, maximumValue = 100): number {
         if (typeof progress !== "number" || maximumValue < 1) {
             return 0;
         } else if (progress > maximumValue || Math.abs(this.calculatePercentage(progress, maximumValue)) > 100) {
@@ -71,7 +71,7 @@ class ProgressBar extends Component<ProgressBarProps, { alertMessage?: string }>
         return this.calculatePercentage(progress, maximumValue);
     }
 
-    private calculatePercentage(progress: number, maxValue = 100) {
+    private calculatePercentage(progress: number, maxValue = 100): number {
         return Math.round((progress / maxValue) * 100);
     }
 

@@ -40,7 +40,7 @@
             <category>Display</category>
             <description>The percentage at which the text gets a contrast color (class) from black to white</description>
         </property>
-        <property key="barType" type="enumeration" required="true" defaultValue="default">
+        <property key="barType" type="enumeration" defaultValue="default">
             <caption>Type</caption>
             <category>Display</category>
             <description>Render the type of progress bar: default, striped or animated </description>
@@ -50,7 +50,7 @@
                 <enumerationValue key="animated">Animated</enumerationValue>
             </enumerationValues>
         </property>
-        <property key="onClickOption" type="enumeration" required="true" defaultValue="doNothing">
+        <property key="onClickOption" type="enumeration" defaultValue="doNothing">
             <caption>On click option</caption>
             <category>Events</category>
             <description/>
@@ -71,7 +71,7 @@
             <category>Events</category>
             <description>The page to open when the progress bar is clicked</description>
         </property>
-        <property key="progressStyle" type="enumeration" required="true" defaultValue="default">
+        <property key="progressStyle" type="enumeration" defaultValue="default">
             <caption>Progress style</caption>
             <category>Display</category>
             <description>The color of the progress bar using bootstrap classes. Only used when 'Style attribute' is not set</description>
