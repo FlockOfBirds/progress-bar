@@ -1,0 +1,20 @@
+.widget-progressbar-text-contrast .progress-bar {
+    color: black;
+}
+
+.widget-progressbar {
+    width: 100%
+}
+
+.widget-progressbar-clickable:hover {
+    cursor: pointer;
+}
+
+.widget-progressbar-negative {
+    float: right;
+    display: block;
+}
+
+.widget-progressbar-alert.widget-progressbar-text-contrast .progress-bar {
+    color: red;
+}
