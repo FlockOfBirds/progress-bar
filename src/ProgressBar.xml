@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="com.mendix.widget.custom.progressbar.ProgressBar" needsEntityContext="true" offlineCapable="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../xsd/widget.xsd">
+<widget id="com.mendix.widget.custom.progressbar.ProgressBar" needsEntityContext="true" offlineCapable="true" pluginWidget="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../xsd/widget.xsd">
     <name>Progress Bar</name>
     <description>The widget lets you display a percentage as a bar</description>
     <icon>
@@ -51,43 +51,10 @@
                 <enumerationValue key="animated">Animated</enumerationValue>
             </enumerationValues>
         </property>
-        <property key="onClickOption" type="enumeration" defaultValue="doNothing">
-            <caption>On click</caption>
+        <property key="onClickAction" type="action" required="false">
+            <caption>On click action</caption>
             <category>Events</category>
-            <description/>
-            <enumerationValues>
-                <enumerationValue key="doNothing">Do nothing</enumerationValue>
-                <enumerationValue key="showPage">Show a page</enumerationValue>
-                <enumerationValue key="callMicroflow">Call a microflow</enumerationValue>
-                <enumerationValue key="callNanoflow">Call a nanoflow</enumerationValue>
-            </enumerationValues>
-        </property>
-        <property key="onClickPage" type="form" required="false">
-            <caption>Page</caption>
-            <category>Events</category>
-            <description>The page to open when the progress bar is clicked</description>
-        </property>
-        <property key="openPageAs" type="enumeration" defaultValue="content">
-            <caption>Open page as</caption>
-            <category>Events</category>
-            <description/>
-            <enumerationValues>
-                <enumerationValue key="content">Full page</enumerationValue>
-                <enumerationValue key="popup">Popup</enumerationValue>
-                <enumerationValue key="modal">Blocking popup</enumerationValue>
-            </enumerationValues>
-        </property>
-        <property key="onClickMicroflow" type="microflow" required="false">
-            <caption>Microflow</caption>
-            <category>Events</category>
-            <description>Microflow to execute when the progress bar is clicked</description>
-            <returnType type="Void" />
-        </property>
-        <property key="onClickNanoflow" type="nanoflow" required="false">
-            <caption>Nanoflow</caption>
-            <category>Events</category>
-            <description>Nanoflow to execute when the progress bar is clicked</description>
-            <returnType type="Void" />
+            <description>Action to execute when the progress bar is clicked</description>
         </property>
         <property key="bootstrapStyle" type="enumeration" defaultValue="default">
             <caption>Bar style</caption>

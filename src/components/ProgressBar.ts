@@ -13,7 +13,7 @@ interface ProgressBarProps {
     colorSwitch?: number;
     displayTextValue?: string;
     displayText?: DisplayText;
-    maximumValue: number;
+    maximumValue?: number;
     onClickAction?: () => void;
     progress?: number;
     style?: object;
@@ -54,7 +54,7 @@ class ProgressBar extends Component<ProgressBarProps, {}> {
                         }),
                         style: { width: `${Math.abs(percentage)}%` }
                     },
-                    this.getProgressText(maximumValue, progress, displayText, displayTextValue)
+                    this.getProgressText(maximumValue as number, progress, displayText, displayTextValue)
                 )
             ),
             createElement(Alert as any, {
